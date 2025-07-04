@@ -1,0 +1,6 @@
+web: gunicorn Quizproject.wsgi
+
+
+
+
+
