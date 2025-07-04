@@ -1,4 +1,4 @@
-web: gunicorn quizproject.wsgi
+web: gunicorn Quizproject.wsgi
 
 
 
