@@ -1,0 +1,7 @@
+{% extends 'quiz/base.html' %}
+{% block content %}
+<div class="text-center mt-5">
+  <h1>Welcome to the Django Quiz App!</h1>
+  <p>Please <a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a> to continue.</p>
+</div>
+{% endblock %}

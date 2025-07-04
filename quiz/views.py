@@ -8,6 +8,10 @@ from django.contrib import messages
 import random
 
 
+def home(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+    return render(request, 'quiz/home.html')
 
 def register_view(request):
     if request.method == "POST":
