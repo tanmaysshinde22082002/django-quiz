@@ -1,0 +1,20 @@
+{% extends 'quiz/base.html' %}
+{% block content %}
+<h2>Select a Quiz</h2>
+<div class="row">
+    {% for category in categories %}
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ category.name }}</h5>
+                <p class="card-text">{{ category.description|truncatewords:20 }}</p>
+                <a href="{% url 'start_quiz' category.id %}" class="btn btn-outline-primary">Start Quiz</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No quiz categories available.</p>
+    {% endfor %}
+</div>
+<a class="btn btn-link mt-3" href="{% url 'quiz_history' %}">View Quiz History</a>
+{% endblock %}

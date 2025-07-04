@@ -1,0 +1,31 @@
+{% extends 'quiz/base.html' %}
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Question {{ question_number }} of {{ total }}</h4>
+        <form method="post">
+            {% csrf_token %}
+            <p class="fs-5 fw-semibold">{{ question.question_text }}</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="option" value="{{ question.option1 }}" required>
+                <label class="form-check-label">{{ question.option1 }}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="option" value="{{ question.option2 }}">
+                <label class="form-check-label">{{ question.option2 }}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="option" value="{{ question.option3 }}">
+                <label class="form-check-label">{{ question.option3 }}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="option" value="{{ question.option4 }}">
+                <label class="form-check-label">{{ question.option4 }}</label>
+            </div>
+            <div class="d-grid mt-4" style="display:flex;justify-content:center;">
+                <button class="btn btn-primary" style="width:100px;">Next</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
